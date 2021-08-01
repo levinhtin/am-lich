@@ -1,0 +1,164 @@
+@import "./share";
+
+.app {
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  @include breakpoint(mobileonly) {
+    xheight: auto;
+  }
+}
+
+.calendar {
+  max-width: 800px;
+  width: 500px;
+  min-height: 500px;
+  box-shadow: 5px 011px 15px 1px rgba(0, 0, 0, 0.83);
+  padding: 1.5rem;
+  padding-bottom: 3rem;
+  background: #fff;
+  position: relative;
+
+  @include breakpoint(mobileonly) {
+    padding: 0.25rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__red {
+    color: #cf2020;
+  }
+
+  &--header {
+    font-size: 3rem;
+    display: flex;
+    justify-content: space-between;
+
+    span {
+      margin: 0px 3px;
+    }
+
+    @include breakpoint(mobileonly) {
+      font-size: 1.5rem;
+      padding-top: 0.35rem;
+    }
+
+    &--icon {
+      height: 58px;
+      opacity: 0.35;
+      transition: 500ms all linear;
+
+      @include breakpoint(mobileonly) {
+        margin-top: -5px;
+        height: 35px;
+      }
+
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      path {
+        fill: #cf2020;
+      }
+    }
+  }
+
+  &--day {
+    font-size: 7rem;
+    margin-top: 1rem;
+    font-weight: 600;
+
+    @include breakpoint(mobileonly) {
+      font-size: 4rem;
+      margin-top: 0.25rem;
+    }
+
+    @include breakpoint(iphonex) {
+      font-size: 10rem;
+      margin-top: 0.25rem;
+    }
+
+    &--weekday {
+      font-size: 3rem;
+      margin-top: 1rem;
+      display: block;
+
+      @include breakpoint(mobileonly) {
+        font-size: 2rem;
+        margin-top: 0.25rem;
+      }
+    }
+  }
+
+  &--lunar {
+    width: 100%;
+    margin-top: 1em;
+
+    @include breakpoint(mobileonly) {
+      margin-top: 0.5rem;
+    }
+
+    &--date {
+      float: left;
+      width: 50%;
+
+      >div {
+        margin-top: 0.35rem;
+        margin-bottom: 0.35rem;
+      }
+    }
+
+    &--info {
+      float: left;
+      width: 50%;
+
+      >div {
+        margin-top: 0.35rem;
+        margin-bottom: 0.35rem;
+      }
+    }
+
+    &--perfect-hours {
+      width: 100%;
+      margin-top: 1em;
+
+      @include breakpoint(mobileonly) {
+        margin-top: 0.25rem;
+      }
+
+      @include breakpoint(iphonex) {
+        margin-top: 0.75rem;
+      }
+    }
+  }
+}
+
+.row {
+  width: 100%;
+  overflow: auto;
+}
+
+.mg {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.font-medium {
+  font-size: 3.5rem;
+
+  @include breakpoint(mobileonly) {
+    font-size: 2.5rem;
+  }
+
+  @include breakpoint(iphonex) {
+    font-size: 5rem;
+  }
+}
